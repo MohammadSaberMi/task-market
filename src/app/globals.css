@@ -1,6 +1,6 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
+/*:root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +23,128 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}*/
+
+/*.bg-background-color {
+  background: radial-gradient(
+      ellipse at 50% 20%,
+      rgb(87, 90, 111) 0%,
+      rgba(0, 0, 0, 1) 15%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    radial-gradient(
+      ellipse at 55% 25%,
+      rgb(87, 90, 111) 0%,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    radial-gradient(
+      ellipse at 45% 15%,
+      rgb(87, 90, 111) 0%,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}*/
+.bg-background-color {
+  background: radial-gradient(
+      ellipse at 50% 20%,
+      rgb(87, 90, 111) 0%,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    radial-gradient(
+      ellipse at 55% 20%,
+      rgb(87, 90, 111) 0%,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    radial-gradient(
+      ellipse at 45% 15%,
+      rgb(87, 90, 111) 0%,
+      rgba(0, 0, 0, 1) 10%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  background-size: 200vw 200vh;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 768px) {
+  .bg-background-color {
+    background-size: 200vh 200vh;
+  }
+}
+
+/*.bg-background-color {
+  background: radial-gradient(
+      ellipse at 50% 20%,
+      rgb(87, 90, 111) 0%,
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    radial-gradient(
+      ellipse at 55% 25%,
+      rgb(87, 90, 111) 0%,
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    radial-gradient(
+      ellipse at 45% 15%,
+      rgb(87, 90, 111) 0%,
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 100%
+    );
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+@media screen and (max-width: 768px) {
+  .bg-background-color {
+    background-size: 200vw 150vh; 
+  }
+}*/
+
+.bg-box {
+  background: rgba(42, 43, 51, 1);
+  background: -moz-linear-gradient(
+    top,
+    rgba(27, 28, 34) 0%,
+    rgb(27, 28, 34) 9%,
+    rgba(19, 20, 25, 1) 100%
+  );
+  background: -webkit-gradient(
+    top top,
+    right top,
+    color-stop(0%, rgba(27, 28, 34)),
+    color-stop(9%, rgba(27, 28, 34)),
+    color-stop(100%, rgba(19, 20, 25, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgb(33, 34, 41) 0%,
+    rgba(27, 28, 34) 9%,
+    rgba(19, 20, 25, 1) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(27, 28, 34) 0%,
+    rgba(27, 28, 34) 9%,
+    rgba(19, 20, 25, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(27, 28, 34) 0%,
+    rgba(31, 32, 38) 9%,
+    rgba(19, 20, 25, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(27, 28, 34) 0%,
+    rgb(27, 28, 34) 9%,
+    rgba(19, 20, 25, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2a2b33', endColorstr='#131419', GradientType=1 );
 }
