@@ -1,36 +1,105 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Market Opportunities (Next.js Project)
+
+A modern web application built with [Next.js](https://nextjs.org), React, TypeScript, Tailwind CSS, and Framer Motion. The project visualizes and lists market opportunities, such as trending coins, new coins, and top gainers, with a responsive and animated UI.
+
+---
+
+## Table of Contents
+
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Scripts](#scripts)
+- [Main Dependencies](#main-dependencies)
+- [Folder Overview](#folder-overview)
+- [Customization](#customization)
+- [Deployment](#deployment)
+
+---
+
+## Project Structure
+
+All main source code is located in the `src/` directory:
+
+```
+src/
+  app/           # Next.js app directory (entry, layout, global styles)
+  components/    # Reusable React components (lists, icons, UI elements)
+    data/        # Mock data for development
+    types/       # TypeScript type definitions
+  hooks/         # Custom React hooks (e.g., data fetching, responsiveness)
+  utils/         # Utility functions (animation, formatting, visibility)
+public/          # Static assets (SVGs, images, icons)
+```
+
+## Features
+
+- **Next.js 15** with App Router
+- **TypeScript** for type safety
+- **Tailwind CSS** for utility-first styling
+- **Framer Motion** for smooth animations
+- **Reusable Components** for market lists and items
+- **Custom Hooks** for data fetching and responsive design
+- **Mock Data** for development and testing
 
 ## Getting Started
 
-First, run the development server:
+1. **Install dependencies:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   # or
+   bun install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Run the development server:**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   npm run dev
+   # or yarn dev, pnpm dev, bun dev
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
+- `dev` – Start the development server
+- `build` – Build for production
+- `start` – Start the production server
+- `lint` – Run ESLint
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Main Dependencies
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `next` – React framework
+- `react`, `react-dom` – UI library
+- `framer-motion` – Animations
+- `tailwindcss` – Styling
+- `typescript` – Type safety
 
-## Deploy on Vercel
+## Folder Overview
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **src/app/**: Next.js entry, layout, and global styles
+- **src/components/**: UI components (lists, sliders, icons, skeletons)
+  - **data/**: Mock data for development
+  - **types/**: TypeScript interfaces and types
+- **src/hooks/**: Custom hooks (e.g., `useMarketData`, `useIsMobile`)
+- **src/utils/**: Utility functions (animation config, formatting, visibility)
+- **public/**: Static files and images (SVGs, icons, wallpapers)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Customization
+
+- Edit `src/components/data/mockMarketData.ts` to change mock data
+- Add or modify components in `src/components/`
+- Update styles in `src/app/globals.css` or Tailwind config
+
+## Deployment
+
+Deploy easily on [Vercel](https://vercel.com/) or any platform supporting Next.js. See [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying).
+
+---
+
+For more details, see the code in the `src/` directory and the comments in each file.
