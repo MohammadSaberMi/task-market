@@ -1,7 +1,5 @@
-// src/components/MarketIcons.tsx
 import React from 'react';
-import { MarketItem } from '@/hooks/useMarketData'; // فرض روی این تیپ
-
+import { MarketItem } from './types';
 export interface SliderItem {
   type: string;
   data: MarketItem[];
