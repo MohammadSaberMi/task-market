@@ -48,8 +48,8 @@ const MarketListSlider: React.FC<MarketListSliderProps> = ({
     const clamped = Math.max(0, Math.min(index, sliderItems.length - 1));
     setCurrentIndex(clamped);
   };
-  const SWIPE_THRESHOLD = 50;
-  const DIRECTION_THRESHOLD = 0.5;
+  const SWIPE_THRESHOLD = 5;
+  const DIRECTION_THRESHOLD = 0.2;
   return (
     <div className="relative w-full overflow-hidden md:hidden">
       <div
@@ -64,22 +64,32 @@ const MarketListSlider: React.FC<MarketListSliderProps> = ({
             left: -cardWidth * (sliderItems.length - 1),
             right: 0
           }}
-          //onDragEnd={(e, info) => {
-          //  if (info.offset.x < 0 && currentIndex < sliderItems.length - 1) {
-          //    goToSlide(currentIndex + 1);
-          //  } else if (info.offset.x > 0 && currentIndex > 0) {
-          //    goToSlide(currentIndex - 1);
-          //  } else {
-          //    goToSlide(currentIndex);
-          //  }
-          //}}
+          //          onDragEnd={(e, info) => {
+          //            const absOffsetX = Math.abs(info.offset.x);
+          //            const absOffsetY = Math.abs(info.offset.y);
+          //
+          //            if (
+          //              absOffsetX > SWIPE_THRESHOLD &&
+          //              absOffsetX / absOffsetY > DIRECTION_THRESHOLD
+          //            ) {
+          //              if (info.offset.x < 0 && currentIndex < sliderItems.length - 1) {
+          //                goToSlide(currentIndex + 1);
+          //              } else if (info.offset.x > 0 && currentIndex > 0) {
+          //                goToSlide(currentIndex - 1);
+          //              } else {
+          //                goToSlide(currentIndex);
+          //              }
+          //            } else {
+          //              goToSlide(currentIndex);
+          //            }
+          //          }}
           onDragEnd={(e, info) => {
             const absOffsetX = Math.abs(info.offset.x);
             const absOffsetY = Math.abs(info.offset.y);
 
             if (
               absOffsetX > SWIPE_THRESHOLD &&
-              absOffsetX / absOffsetY > DIRECTION_THRESHOLD
+              absOffsetX / (absOffsetY || 1) > DIRECTION_THRESHOLD
             ) {
               if (info.offset.x < 0 && currentIndex < sliderItems.length - 1) {
                 goToSlide(currentIndex + 1);
