@@ -33,9 +33,15 @@ const MarketListSlider: React.FC<MarketListSliderProps> = ({
   );
 
   useEffect(() => {
-    if (sliderWrapperRef.current) {
-      setCardWidth(sliderWrapperRef.current.offsetWidth);
+    function updateCardWidth() {
+      if (sliderWrapperRef.current) {
+        setCardWidth(sliderWrapperRef.current.clientWidth);
+      }
     }
+    updateCardWidth();
+
+    window.addEventListener('resize', updateCardWidth);
+    return () => window.removeEventListener('resize', updateCardWidth);
   }, []);
 
   const goToSlide = (index: number) => {
@@ -45,7 +51,11 @@ const MarketListSlider: React.FC<MarketListSliderProps> = ({
 
   return (
     <div className="relative w-full overflow-hidden md:hidden">
-      <div ref={sliderWrapperRef} className="overflow-hidden">
+      <div
+        ref={sliderWrapperRef}
+        className="overflow-hidden"
+        style={{ paddingTop: '8px', boxSizing: 'border-box' }}
+      >
         <motion.div
           className="flex"
           drag="x"
@@ -54,12 +64,9 @@ const MarketListSlider: React.FC<MarketListSliderProps> = ({
             right: 0
           }}
           onDragEnd={(e, info) => {
-            const velocityX = info.velocity.x;
-            const offsetX = info.offset.x;
-
-            if (offsetX < -50 || velocityX < -500) {
+            if (info.offset.x < 0 && currentIndex < sliderItems.length - 1) {
               goToSlide(currentIndex + 1);
-            } else if (offsetX > 50 || velocityX > 500) {
+            } else if (info.offset.x > 0 && currentIndex > 0) {
               goToSlide(currentIndex - 1);
             } else {
               goToSlide(currentIndex);
